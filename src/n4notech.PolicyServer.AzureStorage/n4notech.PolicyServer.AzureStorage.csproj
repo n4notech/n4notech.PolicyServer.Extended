@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>0.0.1.1</Version>
+    <Authors>Emanuele Filardo</Authors>
+    <Company>N4notecnologia srls</Company>
+    <Description>Azure Blob Storage configuration for n4notech.PolicyServer.Manager</Description>
+    <PackageLicenseUrl>https://github.com/n4notech/n4notech.PolicyServer.Extended/blob/master/LICENSE</PackageLicenseUrl>
+    <Copyright>Copyright 2018 © Emanuele Filardo N4notecnologia srls</Copyright>
+    <PackageProjectUrl>https://github.com/n4notech/n4notech.PolicyServer.Extended</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/n4notech/n4notech.PolicyServer.Extended</RepositoryUrl>
+    <Product>n4notech.PolicyServer.AzureStorage</Product>
+    <PackageId>n4notech.PolicyServer.AzureStorage</PackageId>
+    <PackageTags>Authorization;Roles;Permissions</PackageTags>
+    <PackageIconUrl>https://n4notech.github.io/n4notech.PolicyServer.Extended/DataShield.png</PackageIconUrl>
+    <RepositoryType>Git</RepositoryType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="WindowsAzure.Storage" Version="9.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\n4notech.PolicyServer.Manager\n4notech.PolicyServer.Manager.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,45 @@
+﻿{
+  "policy": {
+    "roles": [
+      {
+        "name": "amministratori",
+        "subjects": [ "123", "ABC" ],
+        "identityRoles": [ "ADMIN" ]
+      },
+      {
+        "name": "proprietari",
+        "identityRoles": [ "PROP" ]
+      },
+      {
+        "name": "fornitori",
+        "identityRoles": [ "FN" ]
+      },
+      {
+        "name": "inquilini",
+        "identityRoles": [ "CUSTOMER" ]
+      }
+    ],
+    "permissions": [
+      {
+        "name": "SeeCondomini",
+        "roles": [ "amministratori" ]
+      },
+      {
+        "name": "SeeFornitori",
+        "roles": [ "amministratori" ]
+      },
+      {
+        "name": "SeeProprietari",
+        "roles": [ "amministratori" ]
+      },
+      {
+        "name": "SeeInquilini",
+        "roles": [ "amministratori", "proprietari" ]
+      },
+      {
+        "name": "SendSegnalazione",
+        "roles": [ "inquilini", "proprietari", "fornitori", "amministratori" ]
+      }
+    ]
+  }
+}

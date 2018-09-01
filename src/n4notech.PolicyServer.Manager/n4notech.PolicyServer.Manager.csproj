@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>0.0.1.1</Version>
+    <Authors>Emanuele Filardo</Authors>
+    <Company>N4notecnologia srls</Company>
+    <Description>Manager for Roles and Permissions of PolicyServer.Local</Description>
+    <PackageLicenseUrl>https://github.com/n4notech/n4notech.PolicyServer.Extended/blob/master/LICENSE</PackageLicenseUrl>
+    <Copyright>Copyright 2018 © Emanuele Filardo N4notecnologia srls</Copyright>
+    <PackageProjectUrl>https://github.com/n4notech/n4notech.PolicyServer.Extended</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/n4notech/n4notech.PolicyServer.Manager</RepositoryUrl>
+    <PackageTags>Authorization;Roles;Permissions</PackageTags>
+    <Product>n4notech.PolicyServer.Manager</Product>
+    <PackageId>n4notech.PolicyServer.Manager</PackageId>
+    <PackageIconUrl>https://n4notech.github.io/n4notech.PolicyServer.Extended/DataShield.png</PackageIconUrl>
+    <RepositoryType>Github</RepositoryType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PolicyServer.Local" Version="1.0.3" />
+  </ItemGroup>
+
+</Project>

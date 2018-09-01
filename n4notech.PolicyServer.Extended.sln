@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "n4notech.PolicyServer.Manager", "src\n4notech.PolicyServer.Manager\n4notech.PolicyServer.Manager.csproj", "{950136C7-B69E-4A2F-B5B7-3E297A88BB42}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7E31FD70-1912-45B8-81C2-0EA150D7A5E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{30F3AF56-547E-4B19-AF07-DF48175770F9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "n4notech.PolicyServer.Extended.Tests", "tests\n4notech.PolicyServer.Extended.Tests\n4notech.PolicyServer.Extended.Tests.csproj", "{D6C9D380-3098-4EDB-B47E-B3151E278EF1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "n4notech.PolicyServer.AzureStorage", "src\n4notech.PolicyServer.AzureStorage\n4notech.PolicyServer.AzureStorage.csproj", "{43C64ACF-526D-4D0D-88FD-D6180888A64E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{950136C7-B69E-4A2F-B5B7-3E297A88BB42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{950136C7-B69E-4A2F-B5B7-3E297A88BB42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{950136C7-B69E-4A2F-B5B7-3E297A88BB42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{950136C7-B69E-4A2F-B5B7-3E297A88BB42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6C9D380-3098-4EDB-B47E-B3151E278EF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6C9D380-3098-4EDB-B47E-B3151E278EF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6C9D380-3098-4EDB-B47E-B3151E278EF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6C9D380-3098-4EDB-B47E-B3151E278EF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43C64ACF-526D-4D0D-88FD-D6180888A64E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43C64ACF-526D-4D0D-88FD-D6180888A64E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43C64ACF-526D-4D0D-88FD-D6180888A64E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43C64ACF-526D-4D0D-88FD-D6180888A64E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{950136C7-B69E-4A2F-B5B7-3E297A88BB42} = {30F3AF56-547E-4B19-AF07-DF48175770F9}
+		{D6C9D380-3098-4EDB-B47E-B3151E278EF1} = {7E31FD70-1912-45B8-81C2-0EA150D7A5E0}
+		{43C64ACF-526D-4D0D-88FD-D6180888A64E} = {30F3AF56-547E-4B19-AF07-DF48175770F9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3EB4FEA2-4062-492B-AA42-2A084047E4D4}
+	EndGlobalSection
+EndGlobal
