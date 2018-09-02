@@ -5,18 +5,19 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using n4notech.PolicyServer.Manager.Interfaces;
+using PolicyServer.Local;
 
 namespace n4notech.PolicyServer.Manager.Base
 {
     public abstract class PolicyServerRuntimeManagerBase : IPolicyServerRuntimeManager
     {
-        protected readonly PolicyEditableResult _policy;
+        protected readonly Policy _policy;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PolicyServerRuntimeManagerBase"/> class.
         /// </summary>
         /// <param name="policy">The policy to manage.</param>
-        protected PolicyServerRuntimeManagerBase(PolicyEditableResult policy)
+        protected PolicyServerRuntimeManagerBase(Policy policy)
         {
             _policy = policy;
         }

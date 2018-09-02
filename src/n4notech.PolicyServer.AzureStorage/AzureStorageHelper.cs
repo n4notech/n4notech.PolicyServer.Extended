@@ -7,11 +7,11 @@ using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 using n4notech.PolicyServer.Manager;
 using Newtonsoft.Json;
-using PolicyServer.Runtime.Client;
+using PolicyServer.Local;
 
 namespace n4notech.PolicyServer.AzureStorage
 {
-    public static class AzureStoragebHelper
+    public static class AzureStorageHelper
     {
         private static CloudBlobContainer CloudBlobContainer;
         
@@ -26,8 +26,10 @@ namespace n4notech.PolicyServer.AzureStorage
             CloudBlobContainer = cloudBlobClient.GetContainerReference(Environment.GetEnvironmentVariable("AzureBlobContainerName"));
         }
 
-        private static async Task<string> GetBlobData(string fileId)
+        public static async Task<Policy> GetConfigFileAsync(string fileId = null)
         {
+            InitCloudBlobContainer();
+
             string policyServerConfigFileName = fileId == null ? $"policyServerConfig.json" : $"policyServerConfig_{fileId}.json";
 
             CloudBlockBlob cloudBlockBlob = CloudBlobContainer.GetBlockBlobReference(policyServerConfigFileName);
@@ -41,39 +43,10 @@ namespace n4notech.PolicyServer.AzureStorage
             }
             text = text.Substring(startIndex, text.Length - startIndex);
 
-            return text;
+            return JsonConvert.DeserializeObject<DeserializePolicyResult>(text).Policy;
         }
 
-        public static async Task<PolicyResult> GetConfigFileAsync(string fileId = null)
-        {
-            InitCloudBlobContainer();
-
-            string text = await GetBlobData(fileId);
-
-            var config = JsonConvert.DeserializeObject<DeserzializePolicyEditableResult>(text);
-
-            var roles = config.Policy.Roles.Select(x => x.Name).ToArray();
-            var permissions = config.Policy.Permissions.Select(x => x.Name).ToArray();
-
-            var result = new PolicyResult()
-            {
-                Roles = roles.Distinct(),
-                Permissions = permissions.Distinct()
-            };
-
-            return result;
-        }
-
-        public static async Task<PolicyEditableResult> GetManagerConfigFileAsync(string fileId = null)
-        {
-            InitCloudBlobContainer();
-
-            string text = await GetBlobData(fileId);
-
-            return JsonConvert.DeserializeObject<DeserzializePolicyEditableResult>(text).Policy;
-        }
-
-        public static async Task UpdateConfigFileAsync(PolicyEditableResult policy, string fileId = null)
+        public static async Task UpdateConfigFileAsync(Policy policy, string fileId = null)
         {
             InitCloudBlobContainer();
 
@@ -86,7 +59,7 @@ namespace n4notech.PolicyServer.AzureStorage
 
             try
             {
-                await cloudBlockBlob.SerializeObjectToBlobAsync(new DeserzializePolicyEditableResult { Policy = policy });
+                await cloudBlockBlob.SerializeObjectToBlobAsync(new DeserializePolicyResult { Policy = policy });
             }
             catch (Exception)
             {

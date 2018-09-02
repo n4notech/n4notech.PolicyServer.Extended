@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 
 using n4notech.PolicyServer.Manager;
 using n4notech.PolicyServer.Manager.Interfaces;
+using PolicyServer.Local;
 
 namespace n4notech.PolicyServer.Extended.Tests
 {
@@ -12,7 +13,7 @@ namespace n4notech.PolicyServer.Extended.Tests
         private readonly IConfiguration Configuration;
         public IPolicyServerRuntimeManager PolicyServerRuntimeManager { get; internal set; }
 
-        protected readonly PolicyEditableResult _policy = new PolicyEditableResult();
+        protected readonly Policy _policy = new Policy();
 
         public ConfigFixture()
         {

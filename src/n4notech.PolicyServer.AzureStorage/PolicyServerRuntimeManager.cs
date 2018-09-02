@@ -2,12 +2,13 @@
 using System.Threading.Tasks;
 using n4notech.PolicyServer.AzureStorage;
 using n4notech.PolicyServer.Manager.Base;
+using PolicyServer.Local;
 
 namespace n4notech.PolicyServer.Manager
 {
     public class PolicyServerRuntimeManager : PolicyServerRuntimeManagerBase
     {
-        public PolicyServerRuntimeManager(PolicyEditableResult policy) : base (policy)
+        public PolicyServerRuntimeManager(Policy policy) : base (policy)
         {
 
         }
@@ -16,7 +17,7 @@ namespace n4notech.PolicyServer.Manager
         {
             try
             {
-                await AzureStoragebHelper.UpdateConfigFileAsync(_policy, fileId);
+                await AzureStorageHelper.UpdateConfigFileAsync(_policy, fileId);
 
                 return true;
             }

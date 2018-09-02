@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using n4notech.PolicyServer.AzureStorage;
 using n4notech.PolicyServer.Manager.Interfaces;
-using PolicyServer.Runtime.Client;
+using PolicyServer.Local;
 using Xunit;
 
 namespace n4notech.PolicyServer.Manager.Tests
@@ -18,19 +18,10 @@ namespace n4notech.PolicyServer.Manager.Tests
         }
 
         [Theory]
-        [InlineData("1", typeof(PolicyResult))]
+        [InlineData("1", typeof(Policy))]
         public async Task CanGetClientConfigFile(string fileId, Type expectedResult)
         {
-            var policy = await AzureStoragebHelper.GetConfigFileAsync(fileId);
-
-            Assert.True(policy.GetType() == expectedResult);
-        }
-
-        [Theory]
-        [InlineData("1", typeof(PolicyEditableResult))]
-        public async Task CanGetManagerConfigFile(string fileId, Type expectedResult)
-        {
-            var policy = await AzureStoragebHelper.GetManagerConfigFileAsync(fileId);
+            var policy = await AzureStorageHelper.GetConfigFileAsync(fileId);
 
             Assert.True(policy.GetType() == expectedResult);
         }
@@ -39,7 +30,7 @@ namespace n4notech.PolicyServer.Manager.Tests
         [InlineData("123", "proprietari", "1", true)]
         public async Task CanAddElementToBlobConfigFile(string userId, string roleName, string fileId, bool expectedResult)
         {
-            var policy = await AzureStoragebHelper.GetManagerConfigFileAsync(fileId);
+            var policy = await AzureStorageHelper.GetConfigFileAsync(fileId);
 
             PolicyServerRuntimeManager = new PolicyServerRuntimeManager(policy);
 
@@ -54,7 +45,7 @@ namespace n4notech.PolicyServer.Manager.Tests
         [InlineData("123", "proprietari", "1", true)]
         public async Task CanRemoveElementFromBlobConfigFile(string userId, string roleName, string fileId, bool expectedResult)
         {
-            var policy = await AzureStoragebHelper.GetManagerConfigFileAsync(fileId);
+            var policy = await AzureStorageHelper.GetConfigFileAsync(fileId);
 
             PolicyServerRuntimeManager = new PolicyServerRuntimeManager(policy);
 
