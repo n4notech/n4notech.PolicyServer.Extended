@@ -14,7 +14,7 @@
     <PackageTags>Authorization;Roles;Permissions</PackageTags>
     <Product>n4notech.PolicyServer.Manager</Product>
     <PackageId>n4notech.PolicyServer.Manager</PackageId>
-    <PackageIconUrl>https://n4notech.github.io/n4notech.PolicyServer.Extended/DataShield.png</PackageIconUrl>
+    <PackageIconUrl>https://n4notech.github.io/n4notech.PolicyServer.Extended/images/DataShield.png</PackageIconUrl>
     <RepositoryType>Github</RepositoryType>
   </PropertyGroup>
 

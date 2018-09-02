@@ -14,7 +14,7 @@
     <Product>n4notech.PolicyServer.AzureStorage</Product>
     <PackageId>n4notech.PolicyServer.AzureStorage</PackageId>
     <PackageTags>Authorization;Roles;Permissions</PackageTags>
-    <PackageIconUrl>https://n4notech.github.io/n4notech.PolicyServer.Extended/DataShield.png</PackageIconUrl>
+    <PackageIconUrl>https://n4notech.github.io/n4notech.PolicyServer.Extended/images/DataShield.png</PackageIconUrl>
     <RepositoryType>Git</RepositoryType>
   </PropertyGroup>
 
