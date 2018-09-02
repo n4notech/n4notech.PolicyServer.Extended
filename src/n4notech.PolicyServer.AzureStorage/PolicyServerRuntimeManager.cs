@@ -16,7 +16,7 @@ namespace n4notech.PolicyServer.Manager
         {
             try
             {
-                await BlobExtensions.UpdateConfigFileAsync(_policy, fileId);
+                await AzureStoragebHelper.UpdateConfigFileAsync(_policy, fileId);
 
                 return true;
             }
