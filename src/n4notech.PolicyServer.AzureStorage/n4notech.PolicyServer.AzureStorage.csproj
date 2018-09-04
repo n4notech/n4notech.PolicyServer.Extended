@@ -9,7 +9,7 @@
     <Description>Azure Blob Storage configuration for n4notech.PolicyServer.Manager</Description>
     <PackageLicenseUrl>https://github.com/n4notech/n4notech.PolicyServer.Extended/blob/master/LICENSE</PackageLicenseUrl>
     <Copyright>Copyright 2018 © Emanuele Filardo N4notecnologia srls</Copyright>
-    <PackageProjectUrl>https://github.com/n4notech/n4notech.PolicyServer.Extended</PackageProjectUrl>
+    <PackageProjectUrl>https://n4notech.github.io/n4notech.PolicyServer.Extended/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/n4notech/n4notech.PolicyServer.Extended</RepositoryUrl>
     <Product>n4notech.PolicyServer.AzureStorage</Product>
     <PackageId>n4notech.PolicyServer.AzureStorage</PackageId>
