@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Globalization;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
-using n4notech.PolicyServer.Manager;
 using Newtonsoft.Json;
 using PolicyServer.Local;
 
@@ -17,13 +15,15 @@ namespace n4notech.PolicyServer.AzureStorage
         
         public static void InitCloudBlobContainer()
         {
-            var connString = Environment.GetEnvironmentVariable("AzureBlobStorage");
+            var connString = Environment.GetEnvironmentVariable("AzureBlobStorage") ?? Environment.GetEnvironmentVariable("AzureWebJobsStorage");
 
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(connString);
 
             CloudBlobClient cloudBlobClient = storageAccount.CreateCloudBlobClient();
 
-            CloudBlobContainer = cloudBlobClient.GetContainerReference(Environment.GetEnvironmentVariable("AzureBlobContainerName"));
+            var containerName = Environment.GetEnvironmentVariable("AzureBlobContainerName") ?? "azure-webjobs-hosts";
+
+            CloudBlobContainer = cloudBlobClient.GetContainerReference(containerName);
         }
 
         public static async Task<Policy> GetConfigFileAsync(string fileId = null)
